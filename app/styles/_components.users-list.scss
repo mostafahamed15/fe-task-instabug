@@ -8,7 +8,8 @@
     display: table-row;
     font-size: 16px;
     font-weight: 500;
-    background-color: #e5e9f1;
+    background-color: #37304b;
+    color: #fff;
 
     > div {
       display: table-cell;
@@ -21,7 +22,9 @@
   .c-users-list__body {
     display: table-row;
     height: 64px;
-
+    &:nth-child(odd) {
+      background-color: #f5f5f5;
+    }
     > div {
       display: table-cell;
       padding: 0 8px;
