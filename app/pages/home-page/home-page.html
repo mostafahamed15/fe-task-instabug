@@ -1,13 +1,32 @@
 <div class="c-dashboard">
   <div class="c-filters__container">
-    [Place search component here]
+    <vue-component
+      name="FiltersComponent"
+      v-on-search="homePageVm.handleSearch"
+      v-on-clear="homePageVm.handleClear"
+    ></vue-component>
   </div>
 
-  <employees-list employees-list="homePageVm.employees"></employees-list>
+  <employees-list
+    ng-if="homePageVm.employees.length > 0"
+    search-item="homePageVm.search"
+    employees-list="homePageVm.employees"
+  ></employees-list>
+  <h3 ng-if="homePageVm.employees.length == 0">No data found</h3>
 
-  <div class="c-dashboard__footer">
-    <button class="c-button">
-      Load More
+  <div
+    class="c-dashboard__footer"
+    ng-if="homePageVm.totalPages != homePageVm.currentPage"
+  >
+    <button
+      ng-disabled="homePageVm.clicked"
+      class="c-button"
+      ng-click="homePageVm.loader()"
+    >
+      <div class="c-spinner">
+        <span ng-show="homePageVm.clicked" class="c-smooth spinner"> </span>
+        <label class="c-label"> Load More</label>
+      </div>
     </button>
   </div>
 </div>

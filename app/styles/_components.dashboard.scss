@@ -30,10 +30,38 @@
 }
 
 .c-filters__container {
-  margin: 0 0 8px;
+  margin: 0 0 2rem;
   padding: 16px 8px;
   border: 1px solid #dcdee3;
   background-color: #e5e9f1;
+  .c-filters_form {
+    display: flex;
+    justify-content: center;
+    .c-filters_group {
+      margin: 0 15px;
+      label {
+        padding-right: 5px;
+        color: #00000096;
+      }
+      input {
+        border: 0;
+        padding: 6px;
+        border-radius: 3px;
+      }
+    }
+    .c-filter-btn {
+      padding: 10px;
+      background: #00f;
+      color: #fff;
+      border-radius: 4px;
+    }
+  }
+  .c-filter-error {
+    text-align: center;
+    color: #f00;
+    font-size: 13px;
+    margin-bottom: 0;
+  }
 }
 
 .c-chart__container {
